@@ -27,13 +27,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 import com.shockwave.pdfium.PdfDocument;
-
+import java.util.List;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.NonConfigurationInstance;
@@ -41,8 +40,6 @@ import org.androidannotations.annotations.OnActivityResult;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
-
-import java.util.List;
 
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.options)
@@ -83,6 +80,11 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
         }
 
         launchPicker();
+    }
+
+    @OptionsItem(R.id.loadRemote)
+    void goToRemoveViewer() {
+        startActivity(new Intent(this, RemotePDFViewerActivity.class));
     }
 
     void launchPicker() {

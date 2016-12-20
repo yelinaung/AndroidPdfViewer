@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/remote_pdf_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+  <EditText
+      android:id="@+id/pdfUrl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="enter your url here"
+      />
+
+  <Button
+      android:id="@+id/btnDownload"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Hi Hi"
+      />
+
+  <com.github.barteksc.pdfviewer.PDFView
+      android:id="@+id/pdfView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+</LinearLayout>
